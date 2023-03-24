@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { menuIcon } from "../../../assets/Icons";
+import { menuIcon, closeIcon } from "../../../assets/Icons";
 import Button from "../../elements/Button/Button";
 import Icon from "../../elements/Icon/Icon";
 const HeaderComponent = () => {
@@ -14,9 +14,12 @@ const HeaderComponent = () => {
       <div className="flex w-full h-full justify-between items-center px-3 sm:justify-center">
         <button
           onClick={() => handleShowMenuBar()}
-          className="bg-gray-300/10 rounded-[10px] p-1"
+          className="visible sm:hidden bg-gray-300/10 rounded-[10px] p-1"
         >
-          <Icon iconName={menuIcon} className="visible sm:hidden h-8 w-8" />
+          <Icon
+            iconName={showMenu ? closeIcon : menuIcon}
+            className="h-8 w-8"
+          />
         </button>
         <h1 className="text-white font-epilogue text-[20px] text-center sm:text-[22px] py-1 font-bold">
           Library Management
@@ -24,9 +27,15 @@ const HeaderComponent = () => {
       </div>
       <nav className="sm:flex w-full sm:flex-1 sm:justify-end font-epilogue hidden">
         <ul className=" p-2 gap-8 text-white sm:flex">
-          <li className="cursor-pointer font-semibold">Contect</li>
-          <li className="cursor-pointer font-semibold">About</li>
-          <li className="cursor-pointer font-semibold">Profile</li>
+          <li className="cursor-pointer font-semibold bg-indigo-500 bg-opacity-20 px-2 py-1 rounded-md">
+            Contect
+          </li>
+          <li className="cursor-pointer font-semibold bg-indigo-500 bg-opacity-20 px-2 py-1 rounded-md">
+            About
+          </li>
+          <li className="cursor-pointer font-semibold bg-indigo-500 bg-opacity-20 px-2 py-1 rounded-md">
+            Profile
+          </li>
         </ul>
       </nav>
       {/* mobile view */}
