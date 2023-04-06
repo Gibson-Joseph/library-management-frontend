@@ -6,19 +6,28 @@ module.exports = {
       fontFamily: {
         epilogue: ["Epilogue", "sans-serif"],
       },
-      // keyframes:{
-      //   slide:{
-      //     '0%': { transform: 'rotate(0.0deg)' },
-      //     '10%': { transform: 'rotate(14deg)' },
-      //     '20%': { transform: 'rotate(-8deg)' },
-      //     '30%': { transform: 'rotate(14deg)' },
-      //     '40%': { transform: 'rotate(-4deg)' },
-      //     '50%': { transform: 'rotate(10.0deg)' },
-      //     '60%': { transform: 'rotate(0.0deg)' },
-      //     '100%': { transform: 'rotate(0.0deg)' },
-      //   }
-      // }
+      keyframes: {
+        open: {
+          "0%": { opacity: 0, transform: "translateY(-100%)" },
+          "50%": { opacity: 1, transform: "translateY(10%)" },
+          "100%": { opacity: 1, transform: "translateY(0%)" },
+        },
+        close: {
+          "0%": { opacity: 1, transform: "translateY(0%)" },
+          "50%": { opacity: 0.8, transform: "translateY(10%)" },
+          "100%": { opacity: 0, transform: "translateY(-150%)" },
+        },
+        largeScreenClose:{
+          "0%": { opacity: 1, transform: "translateY(0%)" },
+          "100%": { opacity: 0, transform: "translateY(-150%)" },
+        }
+      },
+      animation: {
+        openMenu: "open 1s ease-out forwards",
+        closeMenu: "close 1s ease-out forwards",
+        largeScreenClose:"largeScreenClose 1s ease-out forwards"
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar"), require("tailwind-scrollbar-hide")],
 };

@@ -3,7 +3,7 @@ import Layout from "./Layout/Layout";
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="h-screen scrollbar-hide overflow-y-scroll">
       <Layout />
     </div>
   );

@@ -7,7 +7,7 @@ const HeaderComponent = () => {
   const handleShowMenuBar = () => {
     setShowMenu(!showMenu);
   };
-
+console.log("showMenu",showMenu)
   const handleLogOut = () => {};
   return (
     <div className="sm:flex items-center bg-gradient-to-r from-slate-700 to-slate-800 flex-1 h-16 z-10 sticky top-0 border-b border-b-red-500">
@@ -41,8 +41,8 @@ const HeaderComponent = () => {
       {/* mobile view */}
       <nav
         className={`${
-          showMenu ? "translate-y-0" : "-translate-y-60"
-        } bg-slate-800 w-full transition-all duration-500 h-[175px] px-3 absolute  py-2 sm:-translate-y-60 border border-red-500`}
+          showMenu ? "animate-openMenu" : "animate-closeMenu"
+        } bg-slate-800 w-full transition-all  duration-500  h-[175px] px-3 absolute  py-2 sm:animate-largeScreenClose border border-red-500`}
       >
         <ul className=" gap-8 text-black flex-col font-epilogue">
           <li

@@ -1,14 +1,13 @@
+import { memo } from "react";
+
 const FooterComponent = () => {
   return (
     <div className="bg-slate-800 border-t border-t-red-500">
       <nav className="p-3">
-        <ul className="text-white font-epilogue font-normal">
-          <li className="font-epilogue text-[16px] py-1 text-white ">Book</li>
-          <li className="font-epilogue text-[16px] py-1 text-white ">Note</li>
-          <li className="font-epilogue text-[16px] py-1 text-white ">Pen</li>
-          <li className="font-epilogue text-[16px] py-1 text-white ">
-            Pencel
-          </li>
+        <ul className="sm:flex justify-between w-full sm:w-1/2 text-white font-epilogue font-normal">
+          <li className="font-epilogue text-[16px] py-1 text-white ">Feedback</li>
+          <li className="font-epilogue text-[16px] py-1 text-white ">Privacy Policy</li>
+          <li className="font-epilogue text-[16px] py-1 text-white ">Terms of Service</li>
         </ul>
       </nav>
       <div>
@@ -21,4 +20,4 @@ const FooterComponent = () => {
   );
 };
 
-export default FooterComponent;
+export default memo(FooterComponent);
